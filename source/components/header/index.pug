@@ -1,0 +1,6 @@
+header.header
+	.header__item
+		img.header__logo(src=require('../../components/header/logo.png'))
+		.header__menu
+			+svgIcon('menu', 'header__switch-menu header__menu-icon menu-ico')
+	include ./search/index

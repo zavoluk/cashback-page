@@ -1,0 +1,7 @@
+mixin svgIcon(id, className)
+	if(className)
+		svg(class=`${className}`)
+			use(xlink:href=`#${id}-ico`)
+	else
+		svg
+			use(xlink:href=`#${id}-ico`)

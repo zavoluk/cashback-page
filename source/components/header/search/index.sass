@@ -1,0 +1,49 @@
+@import ../../../styles/varialbes
+
+.header__form
+  display: flex
+  margin:
+    top: 1rem
+
+.header__form-label
+  background:
+    color: #f3f2f2
+  flex: 1
+  padding: .55rem 1rem
+
+.form__label
+  display: flex
+  border:
+    radius: 4px
+
+.form__input
+  flex: 1
+  font-size: 13px
+  &::placeholder
+    transition: $common-transition-duration
+  &:hover
+    &::placeholder
+      color: transparent
+
+.header__form-link
+  margin:
+    left: .6rem
+  padding: 0 1.2rem 0 1.5rem
+  display: flex
+  align-items: center
+  font:
+    weight: 700
+  color: $white-color
+  background:
+    color: $accent-color
+  border:
+    radius: 4px
+
+.form__search-icon
+  pointer-events: none
+  width: .9rem
+  height: 1.3rem
+  fill: #757575
+  margin:
+    top: .1rem
+    right: -.3rem
