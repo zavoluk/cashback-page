@@ -21,28 +21,18 @@
   font-size: 13px
   &::placeholder
     transition: $common-transition-duration
-  &:hover
+  &:focus
     &::placeholder
       color: transparent
 
 .header__form-link
+  width: 121px
+  height: 40px
   margin:
     left: .6rem
-  padding: 0 1.2rem 0 1.5rem
-  display: flex
-  align-items: center
-  font:
-    weight: 700
-  color: $white-color
-  background:
-    color: $accent-color
-  border:
-    radius: 4px
 
 .form__search-icon
   pointer-events: none
-  width: .9rem
-  height: 1.3rem
   fill: #757575
   margin:
     top: .1rem

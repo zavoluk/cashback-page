@@ -12,10 +12,20 @@
 
 .header__logo
   width: 7.4rem
+  height: 3.1rem
 
-.header__menu-icon
-  width: 2rem
-  height: 1.7rem
-  fill: #747474
-  margin:
-    top: -1px
+.header__menu-inner
+  display: flex
+  flex-flow: column
+  min-width: $min-width
+  position: fixed
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  transform: translate(100%)
+  transition: $common-transition-duration
+  pointer-events: none
+  &.active
+    pointer-events: auto
+    transform: translate(0)

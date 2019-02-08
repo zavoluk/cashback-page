@@ -1,0 +1,81 @@
+@import "../../../styles/varialbes"
+
+.menu__head
+  display: flex
+  justify-content: flex-end
+  height: 58px
+  padding: 1.1rem 1.4rem
+  background:
+    color: #f5f5f5
+
+.header__menu-icon
+  fill: #747474
+  margin:
+    top: -1px
+
+.menu__body
+  display: flex
+  flex-flow: column
+  flex: 1
+  background:
+    color: $white-color
+  padding: 1.9rem .75rem 0
+
+.entry
+  display: flex
+  justify-content: center
+
+.entry__item
+  margin:
+    right: .7rem
+  &:last-of-type
+    margin:
+      right: 0
+
+.entry__register
+  width: 168px
+  height: 45px
+
+.entry__login
+  width: 139px
+  height: 45px
+
+.menu__list
+  display: flex
+  flex: 1
+  border:
+    top: 1px solid #ebebeb
+  padding: 1.6rem 0
+  margin:
+    top: 1.6rem
+  overflow: hidden
+
+.menu__list-inner
+  display: flex
+  flex-flow: column
+  flex: 1
+  overflow: auto
+
+.menu__list-item
+  min-height: 2.43rem
+  width: 100%
+  display: flex
+  align-items: center
+  padding: .4rem .5rem
+  border:
+    radius: 4px
+  transition: $common-transition-duration
+  &:hover
+    background-color: $secondary-color
+    color: $white-color
+    .menu__list-item-icon
+      fill: $white-color
+
+.menu__list-item-title
+  margin-left: 1.55rem
+
+.menu__list-item-icon
+  transition: $common-transition-duration
+  fill: #757575
+  width: 1.2rem
+  height: 1.4rem
