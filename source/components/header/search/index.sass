@@ -10,20 +10,15 @@
     color: #f3f2f2
   flex: 1
   padding: .55rem 1rem
-
-.form__label
   display: flex
   border:
     radius: 4px
 
-.form__input
+.header__form-input
   flex: 1
   font-size: 13px
-  &::placeholder
-    transition: $common-transition-duration
-  &:focus
-    &::placeholder
-      color: transparent
+  padding:
+    right: .4rem
 
 .header__form-link
   width: 121px
@@ -33,7 +28,7 @@
 
 .form__search-icon
   pointer-events: none
-  fill: #757575
+  fill: $gray-color
   margin:
     top: .1rem
     right: -.3rem

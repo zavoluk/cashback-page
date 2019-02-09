@@ -1,17 +1,18 @@
 @import "../../../styles/varialbes"
 
+$headerHeight: 58px
+
 .menu__head
   display: flex
   justify-content: flex-end
-  height: 58px
+  height: $headerHeight
   padding: 1.1rem 1.4rem
   background:
     color: #f5f5f5
 
-.header__menu-icon
-  fill: #747474
-  margin:
-    top: -1px
+.menu__close
+  cursor: pointer
+  fill: $accent-color
 
 .menu__body
   display: flex
@@ -21,61 +22,33 @@
     color: $white-color
   padding: 1.9rem .75rem 0
 
-.entry
-  display: flex
-  justify-content: center
-
-.entry__item
-  margin:
-    right: .7rem
-  &:last-of-type
-    margin:
-      right: 0
-
-.entry__register
-  width: 168px
-  height: 45px
-
-.entry__login
-  width: 139px
-  height: 45px
-
-.menu__list
-  display: flex
-  flex: 1
-  border:
-    top: 1px solid #ebebeb
-  padding: 1.6rem 0
-  margin:
-    top: 1.6rem
-  overflow: hidden
-
-.menu__list-inner
+.menu__forms
   display: flex
   flex-flow: column
-  flex: 1
-  overflow: auto
-
-.menu__list-item
-  min-height: 2.43rem
-  width: 100%
-  display: flex
-  align-items: center
-  padding: .4rem .5rem
-  border:
-    radius: 4px
+  position: absolute
+  left: 0
+  right: 0
+  top: $headerHeight
+  bottom: 0
+  transform: translate(100%)
   transition: $common-transition-duration
-  &:hover
-    background-color: $secondary-color
+  padding:
+    top: 2.2rem
+    left: 1.3rem
+    right: 1.3rem
+  background:
     color: $white-color
-    .menu__list-item-icon
-      fill: $white-color
+  &.active
+    transform: translate(0)
 
-.menu__list-item-title
-  margin-left: 1.55rem
+.register-form-wrapper
+  .register-form
+    display: flex
+  .login-form
+    display: none
 
-.menu__list-item-icon
-  transition: $common-transition-duration
-  fill: #757575
-  width: 1.2rem
-  height: 1.4rem
+.login-form-wrapper
+  .register-form
+    display: none
+  .login-form
+    display: flex

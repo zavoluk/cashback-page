@@ -1,0 +1,67 @@
+@import "../../../../styles/varialbes"
+
+.form
+  display: none
+  flex-flow: column
+  flex: 1
+
+.form__inner
+  flex: 1
+  padding:
+    bottom: 2rem
+  overflow: auto
+
+.form__title
+  text-align: center
+  font:
+    size: 23px
+    weight: 700
+  color: $gray-color
+  text-transform: uppercase
+  margin:
+    bottom: 1.45rem
+
+.form__form-elements
+  display: flex
+  flex-flow: column
+  margin:
+    top: 1.45rem
+    bottom: 1.5rem
+
+.form__form-element
+  display: flex
+  margin:
+    bottom: 1.25rem
+  height: 45px
+
+.form__input-label
+  display: flex
+  border:
+    radius: 4px
+  padding: .82rem 1rem
+  border: 1px solid #bfbfbf
+
+.form__input-label_fill
+  border: 1px solid #f3f3f3
+  background:
+    color: #f3f3f3
+
+.form__input
+  flex: 1
+  font:
+    size: 14px
+  &::placeholder
+    color: #9d9d9d
+
+.form__link
+  color: $accent-color
+
+.login-form__actions
+  display: flex
+  align-items: center
+
+.login-form__btn
+  margin:
+    right: 1.6rem
+  width: 151px
+  height: 45px

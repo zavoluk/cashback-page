@@ -9,4 +9,11 @@ body
 
 .d-none
   display: none
+
+input
+  &::placeholder
+    transition: $common-transition-duration
+  &:focus
+    &::placeholder
+      color: transparent
 /*eo global styles*/

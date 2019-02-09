@@ -1,0 +1,43 @@
+@import "../../../../styles/varialbes"
+
+.menu__list
+  display: flex
+  flex: 1
+  border:
+    top: 1px solid #ebebeb
+  padding: 1rem 0
+  margin:
+    top: 1.8rem
+  overflow: hidden
+
+.menu__list-inner
+  display: flex
+  flex-flow: column
+  flex: 1
+  overflow: auto
+
+.menu__list-item
+  min-height: 2.5rem
+  width: 100%
+  display: flex
+  align-items: flex-end
+  padding: .7rem .5rem
+  border:
+    radius: 4px
+  transition: $common-transition-duration
+  &:hover
+    background:
+      color: $secondary-color
+    color: $white-color
+    .menu__list-item-icon
+      fill: $white-color
+
+.menu__list-item-title
+  margin:
+    left: 1.55rem
+
+.menu__list-item-icon
+  transition: $common-transition-duration
+  fill: $gray-color
+  width: 1.2rem
+  height: 1.2rem

@@ -1,96 +1,12 @@
-mixin menuList(items)
-	each item in items
-		a.menu__list-item(href="#" class=typeof item.authorised === "undefined" ? "" : "authorised-item")
-			+svgIcon(item.icon, 'menu__list-item-icon')
-			span.menu__list-item-title=item.title
-
 .header__menu.menu
 	.header__menu-inner.menu__inner
 		.menu__head
-			+svgIcon('close', 'menu__close fill-accent')
+			+svgIcon('close', 'menu__close')
 		.menu__body
-			.entry.not-authorised-item
-				.entry__register.entry__item.btn.btn_secondary Регистрация
-				.entry__login.entry__item.btn.btn_accent Войти
-			.user.authorised-item
-				.user__row
-				.user__row
-
-			.menu__list
-				.menu__list-inner
-					+menuList(
-					[
-						{
-							title: 'Магазины',
-							icon: 'shop'
-						},
-						{
-							title: 'Расширение для браузера',
-							icon: 'extension'
-						},
-						{
-							title: 'Что такое кэшбэк',
-							icon: 'question'
-						},
-						{
-							title: 'Новости',
-							icon: 'news'
-						},
-						{
-							title: 'Мои магазины',
-							icon: 'star',
-							authorised: true
-						},
-						{
-							title: 'Мои заказы',
-							icon: 'order',
-							authorised: true
-						},
-						{
-							title: 'Мои отзывы',
-							icon: 'message',
-							authorised: true
-						},
-						{
-							title: 'Выплаты',
-							icon: 'wallet',
-							authorised: true
-						},
-						{
-							title: 'Поддержка',
-							icon: 'support',
-							authorised: true
-						},
-						{
-							title: 'Приведи друга',
-							icon: 'add-friend',
-							authorised: true
-						},
-						{
-							title: 'Уведомления',
-							icon: 'notification',
-							authorised: true
-						},
-						{
-							title: 'Генератор ссылок',
-							icon: 'link',
-							authorised: true
-						},
-						{
-							title: 'Настройки',
-							icon: 'settings',
-							authorised: true
-						},
-						{
-							title: 'История переходов',
-							icon: 'history',
-							authorised: true
-						},
-						{
-							title: 'Выход из профиля',
-							icon: 'exit',
-							authorised: true
-						}
-					]
-					)
-	+svgIcon('menu', 'header__switch-menu header__menu-icon')
+			include ./entry/index
+			include ./user/index
+			include ./menu-list/index
+			.menu__forms
+				include ./forms/index
+	.header__switch-menu
+		+svgIcon('menu', 'header__switch-menu header__menu-icon')

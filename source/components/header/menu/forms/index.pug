@@ -1,0 +1,63 @@
+mixin inputs(inputs)
+	each input in inputs
+		label.form__input-label.form__form-element(class=typeof input.labelClass === "undefined" ? "" : input.labelClass)
+			input.form__input(placeholder=input.placeholder)
+
+form.form.not-authorised-item.register-form
+	.form__title Регистрация
+	.form__inner
+		.form__form-elements
+			+inputs(
+			[
+				{
+					placeholder: 'Ваш email'
+				},
+				{
+					placeholder: 'Пароль'
+				},
+				{
+					placeholder: 'Повторно пароль'
+				},
+				{
+					placeholder: 'Введите пригласительный код, если есть',
+					labelClass: 'form__input-label_fill'
+				}
+			]
+			)
+			button.form__form-element.btn.btn_accent.btn_uppercase зарегистрироваться
+		include ../../../register-social/index
+
+form.form.not-authorised-item.login-form
+	.form__title Вход
+	.form__inner
+		.form__form-elements
+			+inputs(
+			[
+				{
+					placeholder: 'Ваш email'
+				},
+				{
+					placeholder: 'Пароль'
+				}
+			]
+			)
+			.form__form-element.login-form__actions
+				button.login-form__btn.btn.btn_accent.btn_uppercase войти
+				.form__link Забыли пароль?
+		include ../../../login-social/index
+
+form.form.not-authorised-item.recovery-form
+	.form__title Восстановление пароля
+	.form__inner
+		.form__form-elements
+			+inputs(
+			[
+				{
+					placeholder: 'Ваш email'
+				},
+			]
+			)
+			.form__form-element.login-form__actions
+				button.login-form__btn.btn.btn_accent.btn_uppercase войти
+				.form__link Забыли пароль?
+		include ../../../login-social/index

@@ -1,0 +1,22 @@
+.user.authorised-item
+	.user__row
+		.user__name Александр
+		.user__status
+			+svgIcon('status')
+			.user__status-text
+				.user__status-name Silver
+				.user__status-static статус
+		.user__actions
+			a(href="#")
+				+svgIcon('settings', 'user__settings user__action')
+			a.user__actions-email(href="#" data-cnt='2')
+				+svgIcon('email', 'user__email user__action')
+	.user__row
+		.user__balance.user__balance-current
+			.user__balance-title Ваш баланс:
+			.user__balance-value 689.25
+		.user__balance.user__balance-expected
+			.user__balance-title Ожидается:
+			.user__balance-value 3515.10
+		.user__avatar
+			+svgIcon('avatar', 'user__avatar-icon')
