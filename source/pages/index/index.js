@@ -14,5 +14,6 @@ import '../../js/onLoad'
 /**
  * components
  */
+import '../../components/overlay'
 import '../../components/state-popup'
 import '../../components/header'

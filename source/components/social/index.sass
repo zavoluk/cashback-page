@@ -1,6 +1,7 @@
 @import "../../styles/varialbes"
 
 .social
+  width: 315px
   display: flex
   justify-content: space-between
 
@@ -8,4 +9,22 @@
   display: flex
   width: 2.62rem
   height: 2.62rem
-  border-radius: 50%
+  border:
+    radius: 50%
+  +hover
+
++media-query($desktop)
+  .social
+    flex-wrap: wrap
+    justify-content: flex-start
+    width: 268px
+
+  .social__icon-wrapper
+    width: 68px
+    height: 68px
+    margin:
+      right: 2rem
+      bottom: 2rem
+    &:nth-of-type(3n)
+      margin:
+        right: 0

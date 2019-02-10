@@ -3,14 +3,17 @@ mixin inputs(inputs)
 		label.form__input-label.form__form-element(class=typeof input.labelClass === "undefined" ? "" : input.labelClass)
 			input.form__input(placeholder=input.placeholder)
 
-form.form.not-authorised-item.register-form
-	.form__title Регистрация
+form.form.register-form
+	.form__header
+		.form__header-title Регистрация
+		+svgIcon('close', 'form__header-close menu__close')
 	.form__inner
 		.form__form-elements
+			.form__form-static Регистрация через e-mail
 			+inputs(
 			[
 				{
-					placeholder: 'Ваш email'
+					placeholder: 'Ваш Email'
 				},
 				{
 					placeholder: 'Пароль'
@@ -25,39 +28,48 @@ form.form.not-authorised-item.register-form
 			]
 			)
 			button.form__form-element.btn.btn_accent.btn_uppercase зарегистрироваться
-		include ../../../register-social/index
+		include ../../../with-social/register-social
 
-form.form.not-authorised-item.login-form
-	.form__title Вход
+form.form.login-form
+	.form__header
+		.form__header-title Вход
+		+svgIcon('close', 'form__header-close menu__close')
 	.form__inner
 		.form__form-elements
+			.form__form-static Войти через e-mail
 			+inputs(
 			[
 				{
-					placeholder: 'Ваш email'
+					placeholder: 'Ваш Email'
 				},
 				{
 					placeholder: 'Пароль'
 				}
 			]
 			)
+			.show-form.form__link.form__link-desktop(data-form-type="recovery-form") Забыли пароль?
 			.form__form-element.login-form__actions
 				button.login-form__btn.btn.btn_accent.btn_uppercase войти
-				.form__link Забыли пароль?
-		include ../../../login-social/index
+				.show-form.form__link.form__link-mobile(data-form-type="recovery-form") Забыли пароль?
+		include ../../../with-social/login-social
 
-form.form.not-authorised-item.recovery-form
-	.form__title Восстановление пароля
+form.form.recovery-form
+	.form__header
+		.form__header-title Восстановление пароля
+		+svgIcon('close', 'form__header-close menu__close')
 	.form__inner
 		.form__form-elements
+			.form__form-static Восстановить пароль через e-mail
 			+inputs(
 			[
 				{
 					placeholder: 'Ваш email'
-				},
+				}
 			]
 			)
-			.form__form-element.login-form__actions
-				button.login-form__btn.btn.btn_accent.btn_uppercase войти
-				.form__link Забыли пароль?
-		include ../../../login-social/index
+			.form__form-element.form__captcha-row
+				.form__captcha
+				label.form__input-label.form__form-element.form__captcha-input
+					input.form__input(placeholder='Введите код')
+			button.btn.btn_accent.btn_uppercase отправить запрос на e-mail
+		include ../../../with-social/login-social

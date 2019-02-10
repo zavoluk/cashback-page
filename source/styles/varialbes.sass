@@ -10,8 +10,20 @@ $white-color: #ffffff
 $min-width: 358px
 $common-transition-duration: .2s
 
-//media-queries
+//max-width
+$max-width_mobile: 336px
+$max-width_tablet: 724px
+$max-width_desktop: 1144px
+
+//breakpoints
+$tablet: 724px
+$desktop: 1164px
 
 =media-query($breakpoint)
   @media (min-width: $breakpoint)
     @content
+
+=hover
+  transition: $common-transition-duration
+  &:hover
+    opacity: .6

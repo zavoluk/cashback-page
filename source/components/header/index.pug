@@ -1,5 +1,5 @@
-header.header
-	.header__item
-		+svgIcon('logo', 'header__logo')
+header.header.wrapper
+	.header__item.wrapper__inner
+		img.header__logo(src=require('../../components/header/logo.png'))
+		include ./search/index
 		include ./menu/index
-	include ./search/index

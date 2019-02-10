@@ -1,12 +1,16 @@
 .header__menu.menu
-	.header__menu-inner.menu__inner
+	.header__menu-inner.menu__inner#menu-inner
 		.menu__head
-			+svgIcon('close', 'menu__close')
-		.menu__body
-			include ./entry/index
-			include ./user/index
-			include ./menu-list/index
-			.menu__forms
-				include ./forms/index
-	.header__switch-menu
-		+svgIcon('menu', 'header__switch-menu header__menu-icon')
+			.menu__head-inner
+				include ./entry/index
+				.menu__head-close-row.wrapper
+					.menu__head-close-row-inner
+						+svgIcon('close', 'menu__close')
+		.menu__body.wrapper
+			.menu__body-inner.wrapper__inner
+				include ./user/index
+				include ./menu-list/index
+				.menu__forms.not-authorised-item
+					.menu__forms-inner
+						include ./forms/index
+	+svgIcon('menu', 'header__switch-menu header__menu-icon')

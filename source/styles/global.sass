@@ -6,9 +6,91 @@ body
     family: 'Roboto', sans-serif
   min-width: $min-width
   transition: opacity $common-transition-duration
+  background:
+    color: #f8f8f8
 
 .d-none
   display: none
+
+.fill-accent
+  fill: $accent-color
+
+.btn
+  display: flex
+  align-items: center
+  justify-content: center
+  font:
+    weight: 700
+  color: $white-color
+  border:
+    radius: 4px
+  cursor: pointer
+  +hover
+  height: 45px
+
+.btn_accent
+  background:
+    color: $accent-color
+
+.btn_secondary
+  background:
+    color: $secondary-color
+
+.btn_uppercase
+  text-transform: uppercase
+  padding:
+    top: .1rem
+
+//icons
+.search-ico
+  width: .9rem
+  height: 1.3rem
+
+.menu-ico
+  cursor: pointer
+  width: 2rem
+  height: 1.7rem
+  +hover
+
+.close-ico
+  width: 1.7rem
+  height: 1.5rem
+  cursor: pointer
+  +hover
+
+.status-ico
+  width: 1.5rem
+  height: 1.5rem
+
+.settings-ico
+  width: 1.2rem
+  height: 1.4rem
+
+.email-ico
+  width: 1.5rem
+  height: 1.5rem
+
+.avatar-ico
+  width: 1.3rem
+  height: 1.4rem
+
+.vk-ico
+  fill: #537598
+
+.fb-ico
+  fill: #094d93
+
+.ok-ico
+  fill: #e85a24
+
+.g-plus-ico
+  fill: #c94538
+
+.ya-ico
+  fill: #e32121
+
+.mailru-ico
+  fill: #ffb131
 
 input
   &::placeholder
@@ -16,4 +98,33 @@ input
   &:focus
     &::placeholder
       color: transparent
+
+.wrapper
+  display: flex
+  justify-content: center
+  width: 100%
+
+.wrapper__inner
+  width: $max-width_mobile
+
++media-query($tablet)
+  .wrapper__inner
+    width: $max-width_tablet
+
+  .menu-ico
+    height: 2rem
+
++media-query($desktop)
+  .wrapper__inner
+    width: $desktop
+
+  .close-ico
+    width: 1rem
+    height: 1rem
+
+  .settings-ico
+    width: 1rem
+
+  .email-ico
+    width: 1.1rem
 /*eo global styles*/

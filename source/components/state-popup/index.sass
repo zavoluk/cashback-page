@@ -1,6 +1,7 @@
 @import "../../styles/varialbes"
 
 .state-popup
+  z-index: 1
   display: flex
   align-items: center
   justify-content: center
@@ -10,7 +11,7 @@
   top: 0
   bottom: 0
   background:
-    color: transparentize($black-color, .5)
+    color: $black-color
 
 .state-popup__inner
   background:
@@ -28,7 +29,7 @@
   cursor: pointer
   border:
     radius: 4px
-  transition: $common-transition-duration
+  transition: background-color $common-transition-duration, color $common-transition-duration
   padding: .5rem 1rem
   &:hover
     background:

@@ -1,6 +1,6 @@
 mixin menuList(items)
 	each item in items
-		a.menu__list-item(href="#" class=typeof item.authorised === "undefined" ? "" : "authorised-item")
+		a.menu__list-item(href="#" class=`${typeof item.authorised === "undefined" ? "" : "authorised-item"} ${typeof item.className === "undefined" ? "" : item.className}`)
 			+svgIcon(item.icon, 'menu__list-item-icon')
 			span.menu__list-item-title=item.title
 
@@ -77,7 +77,8 @@ mixin menuList(items)
 			{
 				title: 'Выход из профиля',
 				icon: 'exit',
-				authorised: true
+				authorised: true,
+				className: 'menu__list-item-exit'
 			}
 		]
 		)

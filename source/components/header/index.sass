@@ -1,13 +1,12 @@
 @import ../../styles/varialbes
 
 .header
-  display: flex
-  flex-flow: column
   padding: .8rem .7rem
 
 .header__item
   display: flex
   align-items: center
+  flex-wrap: wrap
   justify-content: space-between
 
 .header__logo
@@ -15,12 +14,13 @@
   height: 3.1rem
 
 .header__switch-menu
-  cursor: pointer
   .header__menu-icon
     pointer-events: none
 
+.header__menu
+  display: flex
+
 .header__menu-icon
-  cursor: pointer
   fill: #747474
   margin:
     top: -1px
@@ -30,6 +30,7 @@
     fill: $gray-color
 
 .header__menu-inner
+  z-index: 1
   display: flex
   flex-flow: column
   min-width: $min-width
@@ -44,3 +45,63 @@
   &.active
     pointer-events: auto
     transform: translate(0)
+
++media-query($tablet)
+  .header
+    padding: 1.5rem .7rem
+    background:
+      color: $white-color
+
+  .header__menu-inner
+    left: 41.4%
+    &.active
+      box-shadow: 0 0 16px rgba(0, 0, 0, .45)
+
+  .header__logo
+    width: 10.4rem
+    height: 4.2rem
+
+  .header__menu_authorised
+    .menu__head
+      display: none
+
++media-query($desktop)
+  .header
+    &.header_authorised
+      padding: 1rem .7rem
+
+  .header__logo
+    width: 13.7rem
+    height: auto
+
+  .menu__head
+    background:
+      color: transparent
+
+  .header__item
+    align-items: center
+
+  .header__menu
+    width: 330px
+
+  .header__menu.header__menu_authorised
+    width: 351px
+    margin:
+      left: .4rem
+
+  .header__menu-icon
+    display: none
+
+  .header__menu-inner
+    position: relative
+    left: auto
+    right: auto
+    top: auto
+    bottom: auto
+    transform: none
+    pointer-events: auto
+    min-width: 0
+    width: 100%
+    &.active
+      box-shadow: none
+      transform: none

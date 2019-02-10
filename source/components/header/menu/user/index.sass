@@ -2,20 +2,35 @@
 
 .user
   display: flex
-  flex-flow: column
+  align-items: center
   padding: 0 .5rem
+  margin:
+    top: 2rem
+
+.user__inner
+  flex: 1
+
+.user__close
+  fill: $gray-color
+  display: none
+  margin:
+    left: 3.4rem
 
 .user__row
   display: flex
   justify-content: space-between
-  margin-bottom: 1rem
+  margin:
+    bottom: 1.1rem
   &:last-of-type
-    margin-bottom: 0
+    margin:
+      bottom: 0
 
 .user__name
   color: $gray-color
+  width: 125px
 
 .user__status
+  width: 125px
   font:
     weight: 700
   display: flex
@@ -40,6 +55,7 @@
 
 .user__action
   fill: $gray-color
+  +hover
 
 .user__settings
   margin:
@@ -69,6 +85,9 @@
     background:
       color: $secondary-color
 
+.user__balance
+  width: 125px
+
 .user__balance-title
   color: #1b1b1b
   margin:
@@ -90,6 +109,7 @@
     color: $accent-color
 
 .user__avatar
+  cursor: pointer
   border:
     radius: 50%
   background:
@@ -99,6 +119,53 @@
   display: flex
   align-items: center
   justify-content: center
+  transition: $common-transition-duration
 
 .user__avatar-icon
+  pointer-events: none
   fill: $white-color
+
++media-query($tablet)
+  .user
+    margin:
+      top: 1.5rem
+
+  .user__row
+    margin:
+      bottom: 1.2rem
+
+  .user__settings
+    margin:
+      right: 1.2rem
+
+  .user__close
+    display: flex
+
++media-query($desktop)
+  .user
+    margin:
+      top: 0
+    padding: 0
+
+  .user__close
+    display: none
+
+  .user__inner
+    margin:
+      top: .5rem
+
+  .user__row
+    margin:
+      bottom: 1.9rem
+
+  .user__balance-title
+    margin:
+      bottom: .2rem
+
+  .user__avatar
+    margin:
+      right: 2rem
+      left: 1.2rem
+    &.active
+      background:
+        color: $secondary-color
