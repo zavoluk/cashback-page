@@ -1,0 +1,22 @@
+mixin list(items)
+	each item in items
+		.filter__list-item.filter__list-item-selectable(class=typeof item.additionalClass === "undefined" ? "" : item.additionalClass)=item.title
+
+.filter.wrapper__inner
+	.filter__selected
+		.filter__list-item='Популярные магазины'
+	.filter__list
+		+list(
+		[
+			{
+				title: 'Популярные магазины',
+				additionalClass: 'active'
+			},
+			{
+				title: 'Новые магазины'
+			},
+			{
+				title: 'Избранные магазины'
+			}
+		]
+		)

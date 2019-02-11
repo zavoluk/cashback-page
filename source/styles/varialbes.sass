@@ -16,12 +16,16 @@ $max-width_tablet: 724px
 $max-width_desktop: 1144px
 
 //breakpoints
-$tablet: 724px
+$tablet: 724px + 80px
 $desktop: 1164px
 
+//mixin
 =media-query($breakpoint)
   @media (min-width: $breakpoint)
     @content
+
+=border-radius($radius: 4px)
+  border-radius: $radius
 
 =hover
   transition: $common-transition-duration

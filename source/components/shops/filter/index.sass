@@ -1,0 +1,129 @@
+@import "../../../styles/varialbes"
+
+$list-item-height: 38px
+
+.filter
+  position: relative
+  color: $accent-color
+  font:
+    size: 18px
+
+.filter__selected
+  +border-radius
+  height: $list-item-height + 10px
+  display: flex
+  align-items: center
+  background:
+    color: $white-color
+  cursor: pointer
+  padding: 0 6px
+  &:after
+    content: ''
+    position: absolute
+    right: 1rem
+    width: 0
+    height: 0
+    border-style: solid
+    border-width: 9px 5px 0 5px
+    border-color: #c2c2c2 transparent transparent transparent
+    transition: $common-transition-duration
+  .filter__list-item
+    pointer-events: none
+    &:before
+      background:
+        color: $secondary-color
+
+.filter__list
+  box-shadow: 0 0 8px rgba(0, 0, 0, .25)
+  position: absolute
+  left: 0
+  right: 0
+  padding: 6px
+  +border-radius
+  top: calc(100% + 7px)
+  opacity: 0
+  pointer-events: none
+  transition: $common-transition-duration
+  background:
+    color: $white-color
+  &.active
+    opacity: 1
+    pointer-events: auto
+
+.filter__list-item
+  height: $list-item-height
+  display: flex
+  flex: 1
+  padding: 0 1.8rem
+  +border-radius
+  align-items: center
+  transition: $common-transition-duration
+  cursor: pointer
+  margin:
+    bottom: .4rem
+  &:before
+    content: ''
+    width: 5px
+    height: 5px
+    position: absolute
+    left: .95rem
+    pointer-events: none
+    +border-radius(50%)
+    background:
+      color: #c1c1c1
+  &:hover
+    color: $white-color
+    background:
+      color: $secondary-color
+    &:before
+      background:
+        color: $white-color
+  &:last-of-type
+    margin:
+      bottom: 0
+
++media-query($tablet)
+  .filter
+    font:
+      size: 16px
+
+  .filter__selected
+    display: none
+
+  .filter__list
+    opacity: 1
+    display: flex
+    justify-content: space-between
+    position: relative
+    left: auto
+    top: auto
+    right: auto
+    padding: .7rem 2.7rem
+    pointer-events: auto
+
+  .filter__list-item
+    height: auto
+    padding: .2rem 0
+    +border-radius(0)
+    margin:
+      bottom: 0
+    &:before
+      content: none
+    &:hover
+      background:
+        color: transparent
+      color: $secondary-color
+    &:nth-of-type(2n)
+      justify-content: center
+      border-left: 2px solid #e1e1e1
+      border-right: 2px solid #e1e1e1
+    &:nth-of-type(3n)
+      justify-content: flex-end
+    &.active
+      color: $secondary-color
+
++media-query($desktop)
+  .filter
+    font:
+      size: 18px
+    width: auto

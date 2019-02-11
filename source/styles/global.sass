@@ -22,8 +22,7 @@ body
   font:
     weight: 700
   color: $white-color
-  border:
-    radius: 4px
+  +border-radius
   cursor: pointer
   +hover
   height: 45px
@@ -107,16 +106,45 @@ input
 .wrapper__inner
   width: $max-width_mobile
 
+main
+  padding:
+    top: 7px
+  background:
+    color: #f8f8f8
+
+.title
+  color: #666666
+  text-align: center
+  font:
+    size: 25px
+    weight: 700
+  margin:
+    bottom: 1.25rem
+
 +media-query($tablet)
+  main
+    padding:
+      top: 40px
+
   .wrapper__inner
-    width: $max-width_tablet
+    width: $tablet - 80px
+
+  .title
+    font:
+      size: 35px
+    margin:
+      bottom: 2.1rem
 
   .menu-ico
     height: 2rem
 
 +media-query($desktop)
   .wrapper__inner
-    width: $desktop
+    width: $desktop - 80px
+
+  .title
+    font:
+      size: 40px
 
   .close-ico
     width: 1rem

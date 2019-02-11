@@ -3,7 +3,6 @@
  */
 import '../../styles/reset.sass'
 import '../../styles/global.sass'
-import './index.sass'
 /**
  * js
  */
@@ -17,4 +16,5 @@ import '../../js/onLoad'
 import '../../components/state-popup'
 import '../../components/header'
 import '../../components/banner'
+import '../../components/shops'
 import '../../components/overlay'

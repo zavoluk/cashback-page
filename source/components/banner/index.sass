@@ -1,10 +1,10 @@
 @import "../../styles/varialbes"
 
 $carousel-navigation-height: 40px
-$carousel-navigation-height_desktop: 70px
+$carousel-navigation-height_desktop: 68px
 
 .banner
-  margin: 40px 0
+  margin: 0 0 25px
 
 .carousel-container
   position: relative
@@ -86,8 +86,7 @@ $carousel-navigation-height_desktop: 70px
   display: none
 
 .banner-container
-  border:
-    radius: 4px
+  +border-radius
 
 .banner__slide
   display: flex
@@ -98,11 +97,12 @@ $carousel-navigation-height_desktop: 70px
     image: radial-gradient(circle at center, #f9dd3f 0%, $secondary-color 100%)
 
 .banner__slide-img
-  height: 100%
-  margin:
-    bottom: 1.3rem
+  width: $max-width_mobile
 
 +media-query($tablet)
+  .banner
+    margin:
+      bottom: 40px
   .banner-container_not-mobile
     display: flex
 
@@ -113,8 +113,8 @@ $carousel-navigation-height_desktop: 70px
     height: 304px
 
   .banner__slide-img
-    margin:
-      bottom: 0
+    height: 100%
+    width: auto
 
 +media-query($desktop)
   .banner__slide
