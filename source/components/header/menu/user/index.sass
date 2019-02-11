@@ -7,7 +7,15 @@
   margin:
     top: 2rem
 
+.user__col
+  display: flex
+  flex-flow: column
+
+.user__col_last
+  align-items: flex-end
+
 .user__inner
+  display: flex
   flex: 1
 
 .user__close
@@ -16,14 +24,10 @@
   margin:
     left: 3.4rem
 
-.user__row
-  display: flex
-  justify-content: space-between
+.user__col-top
+  height: 25px
   margin:
     bottom: 1.1rem
-  &:last-of-type
-    margin:
-      bottom: 0
 
 .user__name
   color: $gray-color
@@ -130,10 +134,6 @@
     margin:
       top: 1.5rem
 
-  .user__row
-    margin:
-      bottom: 1.2rem
-
   .user__settings
     margin:
       right: 1.2rem
@@ -151,21 +151,27 @@
     display: none
 
   .user__inner
+    justify-content: space-between
+    margin:
+      left: .5rem
     margin:
       top: .5rem
 
-  .user__row
+  .user__actions
     margin:
-      bottom: 1.9rem
+      left: 0
+    width: 100%
+    justify-content: flex-end
+
+  .user__col_last
+    margin:
+      right: .5rem
 
   .user__balance-title
     margin:
       bottom: .2rem
 
   .user__avatar
-    margin:
-      right: 2rem
-      left: 1.2rem
     &.active
       background:
         color: $secondary-color
