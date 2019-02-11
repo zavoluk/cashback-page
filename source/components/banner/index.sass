@@ -1,0 +1,129 @@
+@import "../../styles/varialbes"
+
+$carousel-navigation-height: 40px
+$carousel-navigation-height_desktop: 70px
+
+.banner
+  margin: 40px 0
+
+.carousel-container
+  position: relative
+  overflow: hidden
+
+.carousel-wrapper
+  display: flex
+
+.carousel-navigation
+  display: flex
+  justify-content: space-between
+  align-items: center
+  position: absolute
+  left: 0
+  right: 0
+  height: $carousel-navigation-height
+  top: calc(50% - #{$carousel-navigation-height} / 2)
+  padding: 0 17px
+
+.carousel-navigation-item
+  cursor: pointer
+  height: 100%
+  .carousel-navigation__arrow
+    opacity: .6
+  &:hover
+    .carousel-navigation__arrow
+      opacity: 1
+
+.carousel-navigation__arrow
+  pointer-events: none
+  height: 100%
+  width: 1.5rem
+  transition: $common-transition-duration
+
+.carousel-navigation__next
+  .carousel-navigation__arrow
+    transform: rotate(180deg)
+
+.carousel-pagination
+  position: absolute
+  bottom: .9rem
+  left: 0
+  right: 0
+  display: flex
+  justify-content: center
+  .swiper-pagination-bullet
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    opacity: 1
+    width: 12px
+    height: 12px
+    border:
+      radius: 50%
+    background:
+      color: $white-color
+    transition: $common-transition-duration
+    margin:
+      right: 1.2rem
+    &:after
+      border:
+        radius: 50%
+      content: ''
+      background: $secondary-color
+      width: 6px
+      height: 6px
+      opacity: 0
+      transition: $common-transition-duration
+    &:last-of-type
+      margin-right: 0
+  .swiper-pagination-bullet-active
+    background:
+      color: $white-color
+    &:after
+      opacity: 1
+
+.banner-container_not-mobile
+  display: none
+
+.banner-container
+  border:
+    radius: 4px
+
+.banner__slide
+  display: flex
+  align-items: center
+  justify-content: flex-end
+  height: 334px
+  background:
+    image: radial-gradient(circle at center, #f9dd3f 0%, $secondary-color 100%)
+
+.banner__slide-img
+  height: 100%
+  margin:
+    bottom: 1.3rem
+
++media-query($tablet)
+  .banner-container_not-mobile
+    display: flex
+
+  .banner-container_mobile
+    display: none
+
+  .banner__slide
+    height: 304px
+
+  .banner__slide-img
+    margin:
+      bottom: 0
+
++media-query($desktop)
+  .banner__slide
+    height: 400px
+    justify-content: center
+
+  .carousel-navigation
+    height: $carousel-navigation-height_desktop
+    top: calc(50% - #{$carousel-navigation-height_desktop} / 2)
+
+  .carousel-navigation__arrow
+    width: 2.7rem
