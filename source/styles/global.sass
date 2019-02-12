@@ -35,6 +35,16 @@ body
   background:
     color: $secondary-color
 
+.btn_white
+  background:
+    color: $white-color
+  color: $accent-color
+  box-shadow: 0 0 0 1px $accent-color
+  &:hover
+    background:
+      color: $accent-color
+    color: $white-color
+
 .btn_uppercase
   text-transform: uppercase
   padding:
@@ -140,7 +150,7 @@ main
 
 +media-query($desktop)
   .wrapper__inner
-    width: $desktop - 80px
+    width: $desktop - 20px
 
   .title
     font:

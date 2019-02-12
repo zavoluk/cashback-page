@@ -1,4 +1,68 @@
+mixin shops(items)
+	each item in items
+		.tile.shop-tile
+			.shop-tile__favorite
+				+svgIcon('heart', 'shop-tile__favorite-icon')
+				+svgIcon('heart_fill', 'heart-ico shop-tile__favorite-icon')
+			.shop-tile__logo
+				img(src=require(`../../components/shops/logos/${item.logo}`))
+			.shop-tile__title=item.title
+			.shop-tile__cashback
+				.shop-tile__cashback-static Кэшбэк:
+				.shop-tile__cashback-value=`${item.value} %`
+			.tile__bottom
+				a(href="#").tile__btn.btn.btn_white Подробнее
+
 .shops.wrapper
-	.shops__inner.wrapper__inner
+	.shops__filter.wrapper__inner
 		h2.title Магазины с кешбеком
 		include ./filter/index
+	.shops__list.wrapper__inner
+		+shops(
+		[
+			{
+				logo: 'shop-logo-0.png',
+				title: 'BonPrix',
+				value: '5.02'
+			},
+			{
+				logo: 'shop-logo-1.png',
+				title: 'Ozon',
+				value: '7.16'
+			},
+			{
+				logo: 'shop-logo-2.png',
+				title: 'Мегафон',
+				value: '10.00'
+			},
+			{
+				logo: 'shop-logo-3.png',
+				title: 'М-Видео',
+				value: '4.00'
+			},
+			{
+				logo: 'shop-logo-4.png',
+				title: 'Lamoda',
+				value: '6.10'
+			},
+			{
+				logo: 'shop-logo-5.png',
+				title: 'KupiVip',
+				value: '1.06'
+			},
+			{
+				logo: 'shop-logo-6.png',
+				title: 'AliExpress',
+				value: '8.03'
+			}
+		]
+		)
+		.tile.tile-show-all
+			.tile-show-all__icon-wrapper
+				+svgIcon('refresh', 'tile-show-all__icon')
+			.tile-show-all__bottom
+				.tile-show-all__total
+					.tile-show-all__total-value 987
+					.tile-show-all__total-static магазинов
+				.tile__bottom
+					a(href="#").tile__btn.btn.btn_white Все магазины
