@@ -1,9 +1,13 @@
+import switchDocumentBodyLock from "../../js/switchDocumentBodyLock";
+
 let statePopup = document.querySelector('.state-popup'),
 	stateItems = document.querySelectorAll('.state-popup__item'),
 	authorisedItems = document.querySelectorAll('.authorised-item'),
 	notAuthorisedItems = document.querySelectorAll('.not-authorised-item'),
 	header = document.querySelector('.header'),
 	head = document.querySelector('.header__menu');
+
+switchDocumentBodyLock('lock');
 
 for (let stateItem of stateItems) {
 	stateItem.addEventListener('click', () => {
@@ -15,6 +19,7 @@ for (let stateItem of stateItems) {
 		} else {
 			userIsAuthorised()
 		}
+		switchDocumentBodyLock('unlock');
 	})
 }
 

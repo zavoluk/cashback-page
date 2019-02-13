@@ -1,4 +1,5 @@
 import {switchMenu} from "../header/menu/switch-menu";
+import switchDocumentBodyLock from "../../js/switchDocumentBodyLock";
 
 let overlay = document.querySelector('.overlay');
 
@@ -24,12 +25,14 @@ function switchOverlay(_state, element) {
 	switch (state) {
 		case 'SHOW':
 			overlay.classList.add('active');
+			switchDocumentBodyLock('lock');
 			if (element) {
 				element.classList.add('active');
 			}
 			break;
 		case 'HIDE':
 			overlay.classList.remove('active');
+			switchDocumentBodyLock('unlock');
 			if (element) {
 				element.classList.remove('active')
 			}

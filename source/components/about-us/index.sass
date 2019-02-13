@@ -1,0 +1,70 @@
+@import "../../styles/varialbes"
+
+.about-us
+  display: none
+  background:
+    color: $white-color
+  color: $gray-color_dark
+  font:
+    weight: 700
+  padding:
+    bottom: 2.2rem
+
+.about-us__inner
+  max-width: 970px
+  border:
+    top: 2px solid #f7f7f7
+
+.about-us__items
+  display: flex
+  justify-content: space-between
+  padding: 0 1rem
+
+.about-us__item
+  display: flex
+  flex-flow: column
+  align-items: center
+  text-align: center
+
+.about-us__item-img
+  width: 150px
+  height: 171px
+  background:
+    position: center
+    size: contain
+    repeat: no-repeat
+
+.about-us__item-text
+  margin:
+    top: 1.9rem
+
+.about-us__item-text-value
+  font:
+    size: 36px
+  margin:
+    bottom: 1.4rem
+
+.about-us__item-text-static
+  font:
+    size: 14px
+  text-transform: uppercase
+  @at-root
+    a#{&}
+      color: $accent-color
+      transition: $common-transition-duration
+
+      &:hover
+        +hover
+
+.about-us__item-text-value_with-ruble
+  &:after
+    display: inline-block
+    margin:
+      left: .3rem
+    content: '₽'
+    font:
+      weight: 400
+
++media-query($tablet)
+  .about-us
+    display: flex

@@ -1,4 +1,5 @@
 import {hideOverlay, showOverlay} from "../../overlay/switch-overlay";
+import switchDocumentBodyLock from "../../../js/switchDocumentBodyLock";
 
 let showMenuBtn = document.querySelector('.header__switch-menu'),
 	hideMenuBtns = document.querySelectorAll('.menu__close'),
@@ -37,6 +38,7 @@ export function switchMenu(_state) {
 export function hideForms() {
 	if (forms) {
 		menuBody.classList.remove('active');
+		switchDocumentBodyLock('unlock');
 		setTimeout(() => {
 			for (let form of forms) {
 				form.classList.remove('active', 'register-form-wrapper', 'login-form-wrapper', 'recovery-form-wrapper')
