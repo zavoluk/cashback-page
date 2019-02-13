@@ -1,0 +1,35 @@
+@import "../../styles/varialbes"
+
+.text-block
+  display: none
+  background:
+    color: $white-color
+  font:
+    size: 15px
+  color: $gray-color_dark
+  padding:
+    bottom: 107px
+
+.text-block__sides
+  display: flex
+
+.text-block__side
+  line-height: 1.2
+  margin:
+    right: 2.8rem
+
+  &:last-of-type
+    margin:
+      right: 0
+
++media-query($tablet)
+  .text-block
+    display: flex
+
++media-query($desktop)
+  .text-block
+    padding:
+      bottom: 107px
+  .text-block__side
+    margin:
+      right: 1.5rem
