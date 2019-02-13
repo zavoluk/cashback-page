@@ -7,9 +7,12 @@ html(lang='ru')
 	title
 		block title
 	body(style="opacity: 0;")
-		include ../mixins/index
-		include ../components/header/index
+		include ../../mixins/index
+		include ../../components/header/index
 		main.main
 			block content
+		include ../../components/state-popup/index
+		include ../../components/overlay/index
+		include ../../components/footer/index
 		.d-none
-			include ../components/svg/index
+			include ../../components/svg/index
