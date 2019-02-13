@@ -1,6 +1,6 @@
 mixin slides(cnt, img)
 	-for(var i = 0; i < cnt; i++)
-		.banner__slide.swiper-slide
+		.banner__slide.carousel-slide.swiper-slide
 			img.banner__slide-img(src=require(`../../components/banner/${img}`))
 
 .banner.wrapper
@@ -8,7 +8,7 @@ mixin slides(cnt, img)
 		.swiper-container.banner-container.carousel-container.banner-container_not-mobile
 			.swiper-wrapper.carousel-wrapper
 				+slides(3, 'carousel-item.png')
-			.swiper-pagination.carousel-pagination
+			.banner-pagination.swiper-pagination.carousel-pagination
 			.carousel-navigation
 				.banner__navigation-item__prev.carousel-navigation__prev.carousel-navigation-item
 					+svgIcon('arrow', 'carousel-navigation__arrow')
@@ -17,4 +17,4 @@ mixin slides(cnt, img)
 		.swiper-container.banner-container.carousel-container.banner-container_mobile
 			.swiper-wrapper.carousel-wrapper
 				+slides(3, 'carousel-item_mobile.png')
-			.swiper-pagination.carousel-pagination
+			.banner-pagination.swiper-pagination.carousel-pagination

@@ -1,4 +1,4 @@
-import Swiper from 'swiper'
+import carousel from '../carousel'
 
 let options = {
 	loop: true,
@@ -7,9 +7,12 @@ let options = {
 		prevEl: '.banner__navigation-item__prev',
 	},
 	pagination: {
-		el: '.carousel-pagination',
+		el: '.banner-pagination',
 		clickable: true
 	}
 };
 
-let mySwiper = new Swiper('.swiper-container', options);
+carousel({
+	container: '.banner-container',
+	options: options
+});

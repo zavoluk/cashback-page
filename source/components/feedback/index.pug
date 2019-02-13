@@ -1,0 +1,69 @@
+mixin stars(cnt)
+	-var total = 5
+	-for(var i = 0; i < total - (total - cnt); i++)
+		+svgIcon('star', 'feedback-item__star feedback-item__star_filled')
+	-for(var i = 0; i < total - cnt; i++)
+		+svgIcon('star', 'feedback-item__star')
+
+mixin slides(items)
+	each item in items
+		.feedback-item.carousel-slide.swiper-slide
+			.feedback-item__data-wrapper
+				.feedback-item__avatar
+					img(src=require(`../../components/feedback/${item.avatar}`))
+				.feedback-item__name-and-rate
+					.feedback-item__name=item.name
+					.feedback-item__rate
+						+stars(item.rate)
+				.feedback-item__date=item.date
+			.feedback-item__text-wrapper
+				.feedback-item__text(class=typeof item.additionalClass === "undefined" ? "" : item.additionalClass) !{item.text}
+
+.feedback.wrapper
+	.feedback__inner.wrapper__inner
+		h2.title Отзывы
+		.swiper-container.feedback-container.carousel-container
+			.swiper-wrapper.carousel-wrapper
+				+slides(
+				[
+					{
+						avatar: 'avatar.png',
+						name: 'Архипова Лора',
+						rate: '3',
+						date: '12.04.2016',
+						text: 'Всем привет! Хочу поделиться своим опытом покупок с кэшбэком на Back My Cash. Первое - все работает! :)<br> Второе - обратная связь налажена на отлично, написала - ответили - решили, несколько раз уже так, еще и бонусы дают, если проблемы какие возникли. Я честно не ожидала, что общение с техподдержкой может быть таким, ну, “продуктивным”, что ли.\n А, еще есть программа “пригласи друга” - за нее тоже бонусы, пригласила несколько уже, получила деньги. Проверено лично, хотя сначала сомневалась, сработает ли - но все оказалось на высшем уровне. Точно буду советовать друзьям (а некоторые уже вовсю пользуются). Спасибо за сервис!'
+					},
+					{
+						avatar: 'avatar.png',
+						name: 'Владимиров Сергей',
+						rate: '5',
+						date: '12.04.2016',
+						text: 'Доброго времени суток, добрался и я до отзывов. Сервисом Back My Cash пользуюсь пару месяцев, пока что все здорово :)<br>Кэшбэк получаю после каждой покупки, сначала сомневался, конечно, но оказалось, что все нормально работает. Буду пользоваться дальше. Техподдержка крайне вежливая и, что важно, быстрая - несколько раз обращался, с магазинами было непонятно и кэшбэк не так отображался - сразу ответили, успокоили, долго извинялись и помогли. Хорошее впечатление осталось, в общем, все бы так. Огромное СПАСИБО, что сделали такой сайт, получать деньги обратно, пусть хоть часть, приятно. И экономия, к тому же, неплохая. Побольше бы таких начинаний. Рекомендую!',
+						additionalClass: 'feedback-item__text_small'
+					},
+					{
+						avatar: 'avatar.png',
+						name: 'Архипова Лора',
+						rate: '3',
+						date: '12.04.2016',
+						text: 'Всем привет! Хочу поделиться своим опытом покупок с кэшбэком на Back My Cash. Первое - все работает! :)<br> Второе - обратная связь налажена на отлично, написала - ответили - решили, несколько раз уже так, еще и бонусы дают, если проблемы какие возникли. Я честно не ожидала, что общение с техподдержкой может быть таким, ну, “продуктивным”, что ли.\n А, еще есть программа “пригласи друга” - за нее тоже бонусы, пригласила несколько уже, получила деньги. Проверено лично, хотя сначала сомневалась, сработает ли - но все оказалось на высшем уровне. Точно буду советовать друзьям (а некоторые уже вовсю пользуются). Спасибо за сервис!'
+					},
+					{
+						avatar: 'avatar.png',
+						name: 'Владимиров Сергей',
+						rate: '5',
+						date: '12.04.2016',
+						text: 'Доброго времени суток, добрался и я до отзывов. Сервисом Back My Cash пользуюсь пару месяцев, пока что все здорово :)<br>Кэшбэк получаю после каждой покупки, сначала сомневался, конечно, но оказалось, что все нормально работает. Буду пользоваться дальше. Техподдержка крайне вежливая и, что важно, быстрая - несколько раз обращался, с магазинами было непонятно и кэшбэк не так отображался - сразу ответили, успокоили, долго извинялись и помогли. Хорошее впечатление осталось, в общем, все бы так. Огромное СПАСИБО, что сделали такой сайт, получать деньги обратно, пусть хоть часть, приятно. И экономия, к тому же, неплохая. Побольше бы таких начинаний. Рекомендую!',
+						additionalClass: 'feedback-item__text_small'
+					}
+				]
+				)
+			.feedback-pagination.swiper-pagination.carousel-pagination
+			.feedback-navigation.carousel-navigation
+				.feedback__navigation-item.feedback__navigation-item__prev.carousel-navigation__prev.carousel-navigation-item
+					+svgIcon('arrow_dark', 'carousel-navigation__arrow')
+					+svgIcon('arrow_secondary', 'carousel-navigation__arrow')
+				.feedback__navigation-item.feedback__navigation-item__next.carousel-navigation__next.carousel-navigation-item
+					+svgIcon('arrow_dark', 'carousel-navigation__arrow')
+					+svgIcon('arrow_secondary', 'carousel-navigation__arrow')
+		a(href="#").feedback__btn.btn.btn_uppercase смотреть все отзывы
