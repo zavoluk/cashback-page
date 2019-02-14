@@ -18,13 +18,12 @@
   width: 100%
 
 .video-placeholder
+  display: flex
+  justify-content: center
   height: 192px
   width: 100%
-  background:
-    image: url('../../components/how-it-works/video-placeholder.png')
-    position: center
-    repeat: no-repeat
-    size: contain
+  img
+    max-width: 100%
 
 .how-it-works__steps
   display: flex
@@ -97,6 +96,7 @@
   .video-placeholder
     order: 1
     width: 110%
+    justify-content: flex-end
 
   .how-it-works__steps
     margin: 0
