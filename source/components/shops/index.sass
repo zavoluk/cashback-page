@@ -123,6 +123,11 @@
     color: $white-color
     text-transform: uppercase
 
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+  .tile-show-all
+    margin:
+      top: 2.5rem
+
 .tile-show-all__icon
   display: none
   width: 70px
@@ -187,6 +192,7 @@
     font:
       size: 14px
     margin:
+      top: 0
       bottom: 1.1rem
     background:
       color: $white-color

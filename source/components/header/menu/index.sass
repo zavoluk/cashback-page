@@ -27,7 +27,7 @@
 
 .menu__body
   display: flex
-  flex: 1
+  flex: 1 0 auto
   background:
     color: $white-color
   padding: 0 .75rem
@@ -83,6 +83,10 @@
     opacity: 1
     pointer-events: auto
 
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+  .menu__forms-inner
+    .form
+      transition: transform 0s
 
 +media-query($tablet)
   .menu__head
@@ -175,3 +179,22 @@
     align-items: center
     justify-content: center
     flex: 1
+
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+    .register-form-wrapper
+      .register-form
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+
+    .login-form-wrapper
+      .login-form
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+
+    .recovery-form-wrapper
+      .recovery-form
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)

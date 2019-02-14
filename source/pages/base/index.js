@@ -9,6 +9,7 @@ import '../../styles/global.sass'
 import '@babel/polyfill'
 import '../../js/matchesPolyfill'
 import '../../js/closestPolyfill'
+import '../../js/classListPolyfill'
 import '../../js/onLoad'
 /**
  * components
