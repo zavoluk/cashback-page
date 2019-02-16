@@ -95,16 +95,9 @@
   .heart_fill-ico
     opacity: 0
 
-  &:hover
-    .heart_fill-ico
-      opacity: 1
-
   &.active
     .heart_fill-ico
       opacity: 1
-
-    &:hover
-      opacity: .6
 
 .shop-tile__favorite-icon
   position: absolute
@@ -261,6 +254,12 @@
     width: 2.2rem
     right: .8rem
     top: .6rem
+    &:hover
+      .heart_fill-ico
+        opacity: 1
+    &.active
+      &:hover
+        opacity: .6
 
   .shop-tile
     padding: 1.3rem

@@ -1,8 +1,9 @@
 @import "../../../styles/varialbes"
 
+$headerHeight: 60px
 .menu__head
   display: flex
-  min-height: 136px
+  min-height: $headerHeight
 
 .menu__head-inner
   display: flex
@@ -28,14 +29,24 @@
 
 .menu__body
   display: flex
-  flex: 1 0 auto
+  flex: 1
   background:
     color: $white-color
   padding: 0 .75rem
+  max-height: 100%
 
 .menu__body-inner
   display: flex
   flex-flow: column
+  height: calc(100% - #{$headerHeight})
+
+@media (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm)
+  .menu__body-inner
+    height: auto
+
+@-moz-document url-prefix()
+  .menu__body-inner
+    height: calc(100% - #{$headerHeight})
 
 .menu__forms
   cursor: pointer
@@ -65,6 +76,7 @@
 .menu__forms-inner
   position: relative
   width: 316px
+  height: 100%
 
 .register-form-wrapper
   .register-form
@@ -85,6 +97,8 @@
     pointer-events: auto
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+  .menu__body
+    flex: 1 0 auto
   .menu__forms-inner
     .form
       transition: transform 0s
@@ -122,7 +136,10 @@
     top: 0
 
   .menu__forms-inner
-    width: 385px
+    width: 400px
+
+  .form
+    padding-right: 15px
 
 +media-query($desktop)
   .menu__head
